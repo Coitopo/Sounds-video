@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekime - Página de Inicio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .navbar {
+            background-color: #4d0000;
+            overflow: hidden;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(48, 1, 1, 0.1);
+            text-align: center;
+        }
+
+        .navbar a {
+            display: inline-block; 
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .brand {
+            float: left;
+            padding: 14px 16px;
+            color: #f2f2f2;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            color: #666;
+            font-size: 18px;
+            text-align: center;
+        }
+        
+        .container-video {
+            margin-top: 20px;
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+        }
+
+
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        }
+
+
+        video::-webkit-media-controls {
+            
+            border-radius: 8px;
+        }
+
+        video::-webkit-media-controls-play-button,
+        video::-webkit-media-controls-volume-slider {
+            color: rgb(255, 0, 0); 
+        }
+        .navbar button {
+            background-color: #4d0000;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+
+        .navbar button:hover {
+            background-color: #920202; 
+        }
+
+        .background-image {
+            width: 100%;
+            height: auto;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="brand">Tekime</div>
+    <a href="#">Inicio</a>
+    <a href="#">Acerca de</a>
+    <a href="#">Servicios</a>
+    <a href="#">Contacto</a>
+    <audio id="audio" src="cancion.mp3"></audio>
+    <button onclick="playAudio()">Play</button>
+    <button onclick="pauseAudio()">Pause</button>
+    <button onclick="repeatAudio()">Replay</button>
+</div>
+
+<div class="container">
+    <h1>Bienvenido a Tekime</h1>
+    <p>Aquí encontraras recomendaciones de editores de videos como este:</p>
+    <video controls width="600">
+        <source src="Video.mp4" type="video/mp4">
+        Tu navegador no admite el elemento de video.
+    </video>
+    <h2>Se utilizó este editor</h2>
+    <img class="background-image" src="imagen1.jpg" alt="Imagen de fondo">
+</div>
+<script>
+    var audio = document.getElementById("audio");
+
+    function playAudio() {
+        audio.play();
+    }
+
+    function pauseAudio() {
+        audio.pause();
+    }
+    function repeatAudio() {
+        audio.currentTime = 0; 
+        audio.play();
+    }
+</script>
+
+</body>
+</html>
+
